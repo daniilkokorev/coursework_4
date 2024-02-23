@@ -8,7 +8,7 @@ class InputUserError(UserError):
     query_user = None
     top_n = None
 
-    def user_input_int(self):
+    def user_input_int(self) -> int:
         # проверяем правильность ввода количества вакансий
         self.top_n = input("Введите количество вакансий для вывода в топ N: ")
         if self.top_n.isalpha():
@@ -19,9 +19,9 @@ class InputUserError(UserError):
             raise TypeError("Количество должно быть положительным числом")
         elif int(self.top_n) > 100:
             self.top_n = 100
-        return f"{int(self.top_n)}"
+        return int(self.top_n)
 
-    def user_input_str(self):
+    def user_input_str(self) -> str:
         self.query_user = input("Введите поисковый запрос: ")
         if self.query_user == "":
             raise ValueError("Введите название вакансии")

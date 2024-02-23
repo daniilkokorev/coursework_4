@@ -14,8 +14,9 @@ class GetvacanciesHHAPI(AbstractHHAPI, Vacancions):
 
     def get_vacancies_hh_api(self):
         # получает список вакансий с HH по API
-        key_response = {'text': self.name_vacancion, 'area': 113, 'per_page': self.page_vacancion}
-        response_vacancions = requests.get(f'https://api.hh.ru/vacancies', key_response).json()['items']
+        key_response = {'text': self.name_vacancion, 'area': 113, 'per_page': self.page_vacancion,
+                        'only_with_salary': "true"}
+        response_vacancions = requests.get(f'https://api.hh.ru/vacancies', key_response).json()
         return response_vacancions
 
     def write_vacancions_list(self):

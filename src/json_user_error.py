@@ -13,9 +13,9 @@ class JsonUserError(UserError):
         self.salary_from = input("Введите желаемую зарплату: ")
         if self.salary_from.isalpha():
             raise ValueError("Зарплата должна быть числом")
-        elif self.salary_from == "":
+        if self.salary_from == "":
             self.salary_from = 0
-        elif int(self.salary_from) <= 0:
+        if int(self.salary_from) < 0:
             raise TypeError("Зарплата должна быть положительным числом")
         return int(self.salary_from)
 
