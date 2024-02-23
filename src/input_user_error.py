@@ -24,7 +24,7 @@ class InputUserError(UserError):
     def user_input_str(self):
         self.query_user = input("Введите поисковый запрос: ")
         if self.query_user == "":
-            raise ValueError("Введите запрос")
+            raise ValueError("Введите название вакансии")
         elif self.query_user.isdigit():
             raise TypeError("Не может быть числом")
         return self.query_user

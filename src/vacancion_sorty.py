@@ -28,7 +28,7 @@ class VacancionsSort:
                 self.date_formated = f"{date:%d.%m.%Y}"
             self.vacantion_sorty_list.append({
                 "name_vacancion": v["name"],
-                "salary": v["salary"]["from"],
+                "salary_from": v["salary"]["from"],
                 "salary_to": v["salary"]["to"],
                 "city": v["area"]["name"],
                 # требования
@@ -38,10 +38,3 @@ class VacancionsSort:
                 "date": self.date_formated
             })
         return self.vacantion_sorty_list
-
-if __name__ == '__main__':
-    v = VacancionsSort()
-    pprint(v.vacation_sorted())
-
-
-
