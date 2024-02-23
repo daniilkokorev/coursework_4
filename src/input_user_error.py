@@ -1,4 +1,4 @@
-from abstract_user_error import UserError
+from src.abstract_user_error import UserError
 
 
 class InputUserError(UserError):

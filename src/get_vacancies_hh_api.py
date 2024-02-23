@@ -1,8 +1,8 @@
 import json
 import requests
-from abstract_hh_api import AbstractHHAPI
+from src.abstract_hh_api import AbstractHHAPI
 from config import DATA
-from vacantions_names import Vacancions
+from src.vacantions_names import Vacancions
 
 
 class GetvacanciesHHAPI(AbstractHHAPI, Vacancions):
