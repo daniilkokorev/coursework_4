@@ -1,5 +1,7 @@
 import json
 from datetime import datetime
+from pprint import pprint
+
 from config import DATA
 
 
@@ -17,7 +19,7 @@ class VacancionsSort:
         """
         with open(DATA, encoding='utf-8') as file:
             vacantions = json.load(file)
-        for v in vacantions['items']:
+        for v in vacantions:
             # проверяет зарплату
             if v["salary"]["from"] is None:
                 v["salary"]["from"] = 0
@@ -39,3 +41,8 @@ class VacancionsSort:
                 "date": self.date_formated
             })
         return self.vacantion_sorty_list
+
+
+if __name__ == '__main__':
+    v = VacancionsSort()
+    pprint(v.vacation_sorted())
