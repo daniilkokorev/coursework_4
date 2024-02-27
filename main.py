@@ -1,4 +1,4 @@
-from src.user_interaction import UserInteractionJson, UserInteractionHH
+from src.user_interaction import UserInteractionHH, UserInteractionJson
 
 
 request_user = UserInteractionHH()

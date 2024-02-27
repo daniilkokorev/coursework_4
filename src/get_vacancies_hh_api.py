@@ -1,8 +1,4 @@
-import json
-
 import requests
-
-from config import DATA
 from src.abstract_hh_api import AbstractHHAPI
 from src.vacantions_names import Vacancions
 
@@ -24,10 +20,3 @@ class GetvacanciesHHAPI(AbstractHHAPI, Vacancions):
                         'only_with_salary': "true"}
         response_vacancions = requests.get(f'{self.url_hh}vacancies', key_response).json()['items']
         return response_vacancions
-
-    # def vacancion_json_write(self):
-    #     """
-    #     Записывает вакансии в файл json
-    #     """
-    #     with open(DATA, 'a', encoding='utf-8') as file:
-    #         file.write(json.dumps(self.get_vacancies_hh_api, indent=4, ensure_ascii=False))

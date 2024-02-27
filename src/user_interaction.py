@@ -1,7 +1,6 @@
 from src.input_user_error import InputUserError
 from src.json_user_error import JsonUserError
 from src.vacancion_sorty import VacancionsSort
-from src.get_vacancies_hh_api import GetvacanciesHHAPI
 from src.get_vacancion_json import GetVacancionJson
 
 
@@ -41,6 +40,10 @@ class UserInteractionJson(JsonUserError):
         if len(vacanciens_list) == 0:
             print('Результатов не найдено')
 
+
 if __name__ == '__main__':
-    v = UserInteractionJson()
-    v.json_request()
+    v = UserInteractionHH()
+    v.user_request()
+
+    r = UserInteractionJson()
+    r.json_request()

@@ -2,18 +2,15 @@ import json
 import os
 from pprint import pprint
 
-from get_vacancies_hh_api import GetvacanciesHHAPI
-from abstract_json import AbstractJson
+from src.get_vacancies_hh_api import GetvacanciesHHAPI
+from src.abstract_json import AbstractJson
 from config import DATA
 
 
-class GetVacancionJson(AbstractJson, GetvacanciesHHAPI):
+class GetVacancionJson(GetvacanciesHHAPI, AbstractJson):
     """
     Класс для работы с файлом
     """
-
-    def __init__(self, name_vacancion, page_vacancion):
-        super().__init__(name_vacancion, page_vacancion)
 
     def vacancion_json_write(self):
         """
